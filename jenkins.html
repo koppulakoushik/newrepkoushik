@@ -1,10 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'jin.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+                git branch: 'main', url: 'https://github.com/yourusername/your-repo.git'
             }
         }
+        // Other stages...
     }
 }
